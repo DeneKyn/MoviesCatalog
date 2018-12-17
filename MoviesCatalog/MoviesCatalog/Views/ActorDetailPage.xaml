@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoviesCatalog.Views.ActorDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="Center">
+            <StackLayout BackgroundColor="AntiqueWhite">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="{Binding Cast.Name}" FontSize="Large" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="10,5,10,5" HorizontalOptions="Center">
+                    <Image Source="{Binding Actor.ProfilePath}"/>
+                    <StackLayout Orientation="Vertical">
+
+                        <StackLayout Orientation="Horizontal" >
+                            <Label Text="День Рождения:" FontSize="Medium" />
+                            <Label Text="{Binding Actor.Birthday, StringFormat='{0:D}'}" FontSize="Medium"/>
+                            <Label x:Name="ID" Text="{Binding id}"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Место Рождения:" FontSize="Medium"/>
+                            <Label Text="{Binding Actor.PlaceOfBirth}" FontSize="Medium" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Популярность: " FontSize="Medium"/>
+                            <Label Text="{Binding Actor.Popularity} " FontSize="Medium"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Биография:" FontSize="Medium" HorizontalOptions="Center"/>
+                            <Label Text="{Binding Actor.Biography}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

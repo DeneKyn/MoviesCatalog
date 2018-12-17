@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoviesCatalog.Views.ItemsPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Kek" Clicked="AddItem_Clicked"/>
+        <ToolbarItem Text="Lol" Clicked="Search_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <SearchBar x:Name="MainSearchBar" Placeholder="Search for Movies"/>
+            <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Movies}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding PosterPath}" HeightRequest="150" WidthRequest="130"/>
+                                    <StackLayout Grid.Column="1" Margin="5" Orientation="Vertical">
+                                        <Label Text="{Binding Name}" AutomationId="LabelTitle" LineBreakMode="NoWrap" FontSize="16" FontAttributes="Bold"/>
+                                        <Label Text="{Binding ReleaseDate, StringFormat='{0:D}'}" LineBreakMode="NoWrap" FontSize="13"/>
+                                        <Label Text="{Binding GenresNames}" LineBreakMode="WordWrap" FontSize="13"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding VoteAverage}" LineBreakMode="NoWrap" FontSize="13"/>
+                                            <Image Source="ic_grade_black.png" HeightRequest="15"/>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+        </ListView>            
+    </StackLayout>    
+    </ContentPage.Content>
+</ContentPage>

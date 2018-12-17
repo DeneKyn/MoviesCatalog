@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoviesCatalog.Views.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+        <TableView>            
+            <TableSection Title="Смена языка приложения">
+                <ViewCell>
+                    <Picker x:Name="language_picker" HorizontalOptions="CenterAndExpand">
+                        <Picker.Items>
+                            <x:String>Russian</x:String>
+                            <x:String>English</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </ViewCell>
+            </TableSection>
+        </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
