@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using static MoviesCatalog.Services.WorkWithFiles;
 
 namespace MoviesCatalog.Views
 {
@@ -59,6 +60,11 @@ namespace MoviesCatalog.Views
 
             viewModel = new ItemDetailViewModel(movie);
             BindingContext = viewModel;
+        }
+
+        public void AddBookmarks()
+        {
+            WriteId(viewModel.Movie.Id);
         }
     }
 }

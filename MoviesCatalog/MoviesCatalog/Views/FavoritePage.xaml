@@ -4,14 +4,38 @@
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="MoviesCatalog.Views.FavoritePage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="AntiqueWhite">
-            <forms:AnimationView 
-	        x:Name="animationView" 	        
-	        Animation="star.json" 
-	        Loop="True" 
-	        AutoPlay="True"
-            HeightRequest="15"
-            WidthRequest="15"/>
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding movies}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"                
+                CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="White">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding PosterPath}" HeightRequest="150" WidthRequest="130"/>
+                                    <StackLayout Grid.Column="1" Margin="5" Orientation="Vertical">
+                                        <Label Text="{Binding Name}" AutomationId="LabelTitle" LineBreakMode="NoWrap" FontSize="16" FontAttributes="Bold"/>
+                                        <Label Text="{Binding ReleaseDate, StringFormat='{0:D}'}" LineBreakMode="NoWrap" FontSize="13"/>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding VoteAverage}" LineBreakMode="NoWrap" FontSize="13"/>
+                                            <Image Source="ic_grade_black.png" HeightRequest="15"/>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

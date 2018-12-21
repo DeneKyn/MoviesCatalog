@@ -1,4 +1,5 @@
 ﻿using MoviesCatalog.Models;
+using MoviesCatalog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace MoviesCatalog.Views
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuItemType.Favorite:
-                        MenuPages.Add(id, new NavigationPage(new FavoritePage()));
+                        MenuPages.Add(id, new NavigationPage(new BookmarksPage(new BookmarksViewModel())));
                         break;
                     case (int)MenuItemType.Settings:
                         MenuPages.Add(id, new NavigationPage(new SettingsPage()));

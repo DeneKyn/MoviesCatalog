@@ -11,7 +11,7 @@
                 <StackLayout Spacing="20" Padding="15">
                     <Image Source="{Binding Movie.PosterPath}"/>
                     <Label Text="{Binding Movie.Name}"/>
-                    
+                    <Button Text="Добавить в закладки" Clicked="AddBookmarks"/>
                     <Label Text="{Binding Movie.ReleaseDate, StringFormat='Год: {0}'}" HorizontalOptions="Fill"/>
                     <Label Text="{Binding Movie.IsAdultThemed, StringFormat='18+: {0}'}" HorizontalOptions="Fill"/>
                     <Label Text="Описание" HorizontalOptions="CenterAndExpand"/>

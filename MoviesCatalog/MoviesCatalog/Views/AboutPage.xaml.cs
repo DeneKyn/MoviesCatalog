@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static MoviesCatalog.Services.WorkWithFiles;
 
 namespace MoviesCatalog.Views
 {
@@ -11,6 +12,7 @@ namespace MoviesCatalog.Views
         public AboutPage()
         {
             InitializeComponent();
+            
         }
     }
 }
