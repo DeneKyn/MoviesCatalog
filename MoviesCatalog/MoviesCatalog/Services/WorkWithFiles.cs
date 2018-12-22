@@ -61,20 +61,9 @@ namespace MoviesCatalog.Services
         }
 
         public static void FileClear()
-        {
-            /*try
-            {
-                using (StreamWriter sw = new StreamWriter(FilePath, false, System.Text.Encoding.Default))
-                {
-                    sw.WriteLine("");
-                    sw.Close();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }*/
+        {        
             File.Delete(FilePath);
+            File.WriteAllText(FilePath, "");
         }
 
     }

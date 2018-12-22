@@ -14,10 +14,7 @@
                 ItemsSource="{Binding BookmarksMovies}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"                
-                CachingStrategy="RecycleElement"
-                RefreshCommand="{Binding LoadFavorite}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                CachingStrategy="RecycleElement">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

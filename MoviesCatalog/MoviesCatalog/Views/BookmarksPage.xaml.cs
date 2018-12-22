@@ -31,15 +31,15 @@ namespace MoviesCatalog.Views
        public void DelereAll()
         {
             FileClear();
+            viewModel = new BookmarksViewModel();
+            BindingContext = viewModel;
         }
         
         protected override void OnAppearing()
         {
             viewModel = new BookmarksViewModel();
-            base.OnAppearing();
-            //viewModel.LoadBookmarks();
-            BindingContext  = viewModel;
-            //LoadFavorite();
+            base.OnAppearing();            
+            BindingContext  = viewModel;            
         }
     }
 }

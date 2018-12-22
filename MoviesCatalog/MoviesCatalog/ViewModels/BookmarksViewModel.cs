@@ -15,13 +15,11 @@ namespace MoviesCatalog.ViewModels
 {
     public class BookmarksViewModel : BaseViewModel
     {
-        public Command LoadItemsCommand { get; set; }
         public ObservableCollection<Movie> BookmarksMovies { get; set; }
         public BookmarksViewModel()
         {
             Title = "Bookmarks";
-            LoadBookmarks();
-            LoadItemsCommand = new Command(() => ExecuteLoadItemsCommand());
+            LoadBookmarks();            
         }
         public void LoadBookmarks()
         {
@@ -42,26 +40,8 @@ namespace MoviesCatalog.ViewModels
 
 
         }
-        void ExecuteLoadItemsCommand()
-        {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
-            try
-            {
-                LoadBookmarks();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
+        
+        
     }
 
 }
