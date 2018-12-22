@@ -8,8 +8,8 @@ using MoviesCatalog.ViewModels;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
-using System.Collections.ObjectModel;
 using static MoviesCatalog.Services.WorkWithFiles;
+
 
 namespace MoviesCatalog.Views
 {
@@ -65,6 +65,7 @@ namespace MoviesCatalog.Views
         public void AddBookmarks()
         {
             WriteId(viewModel.Movie.Id);
+            
         }
     }
 }

@@ -5,15 +5,19 @@
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Delete All" Clicked="DelereAll"/>
+        
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
         <StackLayout BackgroundColor="WhiteSmoke">
             <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding Movies}"
+                ItemsSource="{Binding BookmarksMovies}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"                
-                CachingStrategy="RecycleElement">
+                CachingStrategy="RecycleElement"
+                RefreshCommand="{Binding LoadFavorite}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
