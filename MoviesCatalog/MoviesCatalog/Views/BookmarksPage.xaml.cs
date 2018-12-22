@@ -41,5 +41,16 @@ namespace MoviesCatalog.Views
             base.OnAppearing();            
             BindingContext  = viewModel;            
         }
+        public void DeleteBookmark(Object Sender, EventArgs args)
+        {
+            Button button = (Button)Sender;
+            StackLayout listViewItem = (StackLayout)button.Parent;
+            Label label = (Label)listViewItem.Children[0];
+            string text = label.Text;
+
+            DeleteId(Convert.ToInt32(text));
+            OnAppearing();
+            DisplayAlert("Уведомление", text, "Ok");
+        }
     }
 }

@@ -65,7 +65,8 @@ namespace MoviesCatalog.Views
         public void AddBookmarks()
         {
             WriteId(viewModel.Movie.Id);
-            
+            string temp = "Матеша сосёт";
+            DisplayAlert("Уведомление", temp, "Ok");
         }
     }
 }
