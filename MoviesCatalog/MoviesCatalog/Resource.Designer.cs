@@ -61,7 +61,7 @@ namespace MoviesCatalog {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Abot the application.
+        ///   Ищет локализованную строку, похожую на About the application.
         /// </summary>
         internal static string Abot {
             get {
@@ -97,11 +97,65 @@ namespace MoviesCatalog {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Change application language.
+        /// </summary>
+        internal static string ChangeLanguage {
+            get {
+                return ResourceManager.GetString("ChangeLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Date of birthday.
         /// </summary>
         internal static string DateOfBirthday {
             get {
                 return ResourceManager.GetString("DateOfBirthday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Delete.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Movie search.
+        /// </summary>
+        internal static string FilmFind {
+            get {
+                return ResourceManager.GetString("FilmFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Movie bookmarked.
+        /// </summary>
+        internal static string FilmToBookmarks {
+            get {
+                return ResourceManager.GetString("FilmToBookmarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Find.
+        /// </summary>
+        internal static string Find {
+            get {
+                return ResourceManager.GetString("Find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Notification.
+        /// </summary>
+        internal static string Notification {
+            get {
+                return ResourceManager.GetString("Notification", resourceCulture);
             }
         }
         
@@ -129,6 +183,15 @@ namespace MoviesCatalog {
         internal static string Popularity {
             get {
                 return ResourceManager.GetString("Popularity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Remove All.
+        /// </summary>
+        internal static string RemoveAll {
+            get {
+                return ResourceManager.GetString("RemoveAll", resourceCulture);
             }
         }
         

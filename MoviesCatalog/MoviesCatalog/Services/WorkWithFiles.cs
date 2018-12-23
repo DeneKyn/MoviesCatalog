@@ -13,6 +13,7 @@ namespace MoviesCatalog.Services
 
         private static string fPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
         public static string FilePath = Path.Combine(fPath, "Book.txt");
+        private static string SettingsPath = Path.Combine(fPath, "Settings.txt");
         public static void WriteId(int id)
         {
 
@@ -66,5 +67,39 @@ namespace MoviesCatalog.Services
             File.WriteAllText(FilePath, "");
         }
 
+        public static void WriteSettings()
+        {
+            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(SettingsPath, false))
+            {
+                sw.WriteLine($"language = {AppSettings.Language}");                
+                sw.Close();
+            }
+        }
+
+        public static void WriteSettings(string lang)
+        {
+            using (System.IO.StreamWriter sw = new System.IO.StreamWriter(SettingsPath, false))
+            {
+                sw.WriteLine($"language = {lang}");
+                sw.Close();
+            }
+        }
+
+        public static void ReadSettings()
+        {
+            string buffer = null;
+            if (File.Exists(SettingsPath))
+            {
+                using (System.IO.StreamReader reader = new System.IO.StreamReader(SettingsPath))
+                {
+                    buffer = reader.ReadToEnd();
+                    string[] temp = buffer.Split('\n');
+                    string temp_str = temp[0];
+                    AppSettings.Language = temp_str.Split(new string[] { "language = " }, StringSplitOptions.None)[1];                    
+                    reader.Close();
+                }
+            }
+
+        }
     }
 }

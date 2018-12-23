@@ -129,8 +129,26 @@
   <data name="Bookmarks" xml:space="preserve">
     <value>Закладки</value>
   </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Смена языка приложения</value>
+  </data>
   <data name="DateOfBirthday" xml:space="preserve">
     <value>День Рождения</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="FilmFind" xml:space="preserve">
+    <value>Поиск фильмов</value>
+  </data>
+  <data name="FilmToBookmarks" xml:space="preserve">
+    <value>Фильм добавлен в закладки</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Уведомление</value>
   </data>
   <data name="Overview" xml:space="preserve">
     <value>Описание</value>
@@ -140,6 +158,9 @@
   </data>
   <data name="Popularity" xml:space="preserve">
     <value>Популярность</value>
+  </data>
+  <data name="RemoveAll" xml:space="preserve">
+    <value>Удалить все</value>
   </data>
   <data name="Setting" xml:space="preserve">
     <value>Настройки</value>

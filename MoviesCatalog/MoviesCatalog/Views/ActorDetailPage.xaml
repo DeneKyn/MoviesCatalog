@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoviesCatalog.Views.ActorDetailPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog">
     <ContentPage.Content>
         <ScrollView HorizontalOptions="Center">
             <StackLayout BackgroundColor="AntiqueWhite">
@@ -14,22 +15,22 @@
                     <StackLayout Orientation="Vertical">
 
                         <StackLayout Orientation="Horizontal" >
-                            <Label Text="День Рождения:" FontSize="Medium" />
+                            <Label Text="{local:Translate DateOfBirthday}" FontSize="Medium" />
                             <Label Text="{Binding Actor.Birthday, StringFormat='{0:D}'}" FontSize="Medium"/>
                             <Label x:Name="ID" Text="{Binding id}"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Место Рождения:" FontSize="Medium"/>
+                            <Label Text="{local:Translate PlaceOfBirth}" FontSize="Medium"/>
                             <Label Text="{Binding Actor.PlaceOfBirth}" FontSize="Medium" />
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Популярность: " FontSize="Medium"/>
+                            <Label Text="{local:Translate Popularity}" FontSize="Medium"/>
                             <Label Text="{Binding Actor.Popularity} " FontSize="Medium"/>
                         </StackLayout>
 
                         <StackLayout HorizontalOptions="Center">
-                            <Label Text="Биография:" FontSize="Medium" HorizontalOptions="Center"/>
+                            <Label Text="{local:Translate Biography}" FontSize="Medium" HorizontalOptions="Center"/>
                             <Label Text="{Binding Actor.Biography}"/>
                         </StackLayout>
                     </StackLayout>

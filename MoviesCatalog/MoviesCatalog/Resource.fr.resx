@@ -118,57 +118,57 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Abot" xml:space="preserve">
-    <value>About the application</value>
+    <value>A propos de l'application</value>
   </data>
   <data name="AddToBookmarks" xml:space="preserve">
-    <value>Add to favorite</value>
+    <value>Ajouter aux Favoris</value>
   </data>
   <data name="Biography" xml:space="preserve">
-    <value>Biography</value>
+    <value>la biographie</value>
   </data>
   <data name="Bookmarks" xml:space="preserve">
-    <value>Bookmarks</value>
+    <value>Signets</value>
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
-    <value>Change application language</value>
+    <value>Changer la langue de l'application</value>
   </data>
   <data name="DateOfBirthday" xml:space="preserve">
-    <value>Date of birthday</value>
+    <value>Date d'anniversaire</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Effacer</value>
   </data>
   <data name="FilmFind" xml:space="preserve">
-    <value>Movie search</value>
+    <value>Recherche de film</value>
   </data>
   <data name="FilmToBookmarks" xml:space="preserve">
-    <value>Movie bookmarked</value>
+    <value>Film marqué</value>
   </data>
   <data name="Find" xml:space="preserve">
-    <value>Find</value>
+    <value>Trouver</value>
   </data>
   <data name="Notification" xml:space="preserve">
     <value>Notification</value>
   </data>
   <data name="Overview" xml:space="preserve">
-    <value>Overview</value>
+    <value>Vue d'ensemble</value>
   </data>
   <data name="PlaceOfBirth" xml:space="preserve">
-    <value>Place of birth</value>
+    <value>Lieu de naissance</value>
   </data>
   <data name="Popularity" xml:space="preserve">
-    <value>Popularity</value>
+    <value>Popularité</value>
   </data>
   <data name="RemoveAll" xml:space="preserve">
-    <value>Remove All</value>
+    <value>Enlever tout</value>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Setting</value>
+    <value>Réglage</value>
   </data>
   <data name="TopRatedFilm" xml:space="preserve">
-    <value>Popular Films</value>
+    <value>Films populaires</value>
   </data>
   <data name="Year" xml:space="preserve">
-    <value>Year of realese</value>
+    <value>Année de sortie</value>
   </data>
 </root>

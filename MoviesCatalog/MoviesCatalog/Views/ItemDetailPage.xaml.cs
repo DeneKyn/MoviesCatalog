@@ -65,7 +65,7 @@ namespace MoviesCatalog.Views
         public void AddBookmarks()
         {
             WriteId(viewModel.Movie.Id);
-            DisplayAlert("Уведомление", "Фильм добавлен в избранное", "Ok");
+            DisplayAlert(Resource.Notification, Resource.FilmToBookmarks, "Ok");
         }
     }
 }

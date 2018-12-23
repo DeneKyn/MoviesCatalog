@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoviesCatalog.Views.BookmarksPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Delete All" Clicked="DelereAll"/>
+        <ToolbarItem Text="{local:Translate RemoveAll}" Clicked="DelereAll"/>
         
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
@@ -33,7 +34,7 @@
                                             <Label Text="{Binding Id}" IsVisible="False"/>
                                             <Label Text="{Binding VoteAverage}" LineBreakMode="NoWrap" FontSize="13"/>
                                             <Image Source="ic_grade_black.png" HeightRequest="15"/>
-                                            <Button Text="Удалить" Clicked="DeleteBookmark"/>
+                                            <Button Text="{local:Translate Delete}" Clicked="DeleteBookmark"/>
 
                                         </StackLayout>
                                     </StackLayout>

@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MoviesCatalog.Views;
+using MoviesCatalog.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MoviesCatalog
@@ -12,8 +13,12 @@ namespace MoviesCatalog
         public App()
         {
             InitializeComponent();
-            
+
             //Resource.Culture = new System.Globalization.CultureInfo("AppSe");
+
+            //AppSettings.Language = "en";
+            //WorkWithFiles.WriteSettings("en");
+            WorkWithFiles.ReadSettings();
             Resource.Culture = new System.Globalization.CultureInfo(AppSettings.Language);
             MainPage = new MainPage();
         }

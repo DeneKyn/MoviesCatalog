@@ -15,7 +15,25 @@ namespace MoviesCatalog.Views
     {
         public SettingsPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            switch(AppSettings.Language)
+            {
+                case ("ru"):
+                    language_picker.SelectedIndex = 0;
+                    break;
+                case ("en"):
+                    language_picker.SelectedIndex = 1;
+                    break;
+                case ("fr"):
+                    language_picker.SelectedIndex = 2;
+                    break;
+            }
+            
+        }
+        private void language_picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AppSettings.Language = language_picker.Items[language_picker.SelectedIndex];
+            WriteSettings();
         }
     }
 }
