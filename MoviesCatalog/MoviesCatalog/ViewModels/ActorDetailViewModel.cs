@@ -18,7 +18,7 @@ namespace MoviesCatalog.ViewModels
             Cast = cast;
 
             string str;
-            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}person/{Cast.PersonId}/?api_key={AppSettings.ApiKey}&language=ru").GetResponse().GetResponseStream()))
+            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}person/{Cast.PersonId}/?api_key={AppSettings.ApiKey}&language={AppSettings.Language}").GetResponse().GetResponseStream()))
                 str = strr.ReadToEnd();
             Actor = JsonConvert.DeserializeObject<Actor>(str);
             Actor.ProfilePath = "https://image.tmdb.org/t/p/w500" + Actor.ProfilePath;

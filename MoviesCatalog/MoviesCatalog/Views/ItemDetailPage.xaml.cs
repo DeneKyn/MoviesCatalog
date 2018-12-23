@@ -26,7 +26,7 @@ namespace MoviesCatalog.Views
 
             string str;
             
-            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}movie/{viewModel.Movie.Id}/credits?api_key={AppSettings.ApiKey}&language=ru").GetResponse().GetResponseStream()))
+            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}movie/{viewModel.Movie.Id}/credits?api_key={AppSettings.ApiKey}&language={AppSettings.Language}").GetResponse().GetResponseStream()))
                 str = strr.ReadToEnd();
             var info = JsonConvert.DeserializeObject<MovieCastMember>(str);
 
@@ -65,8 +65,7 @@ namespace MoviesCatalog.Views
         public void AddBookmarks()
         {
             WriteId(viewModel.Movie.Id);
-            string temp = "Матеша сосёт";
-            DisplayAlert("Уведомление", temp, "Ok");
+            DisplayAlert("Уведомление", "Фильм добавлен в избранное", "Ok");
         }
     }
 }

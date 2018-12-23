@@ -15,5 +15,6 @@ namespace MoviesCatalog
         public static string MoviesMessage = "Movies";
         public static string ShowsMessage = "Shows";
         public static string ImagesMessage = "Images";
+        public static string Language = "en";
     }
 }

@@ -18,7 +18,7 @@ namespace MoviesCatalog.ViewModels
         public ObservableCollection<Movie> BookmarksMovies { get; set; }
         public BookmarksViewModel()
         {
-            Title = "Bookmarks";
+            Title = Resource.Bookmarks;
             LoadBookmarks();            
         }
         public void LoadBookmarks()
@@ -29,16 +29,14 @@ namespace MoviesCatalog.ViewModels
             
             foreach (string id in MoviesIds)
             {
-                using (StreamReader strr = new StreamReader(WebRequest.Create(@"https://api.themoviedb.org/3/movie/" + id + "?api_key=575d4217958f8abcc637ec5ba82e347c&language=ru-RU").GetResponse().GetResponseStream()))
+               // $"{AppSettings.ApiUrl}search/movie?api_key={AppSettings.ApiKey}&language={AppSettings.Language}&query={EntrySearch.Text}&page=1&include_adult=false";
+                using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}movie/{id}?api_key={AppSettings.ApiKey}&language={AppSettings.Language}").GetResponse().GetResponseStream()))
                     str = strr.ReadToEnd();
                 var info = JsonConvert.DeserializeObject<Movie>(str);
                 info.PosterPath = "https://image.tmdb.org/t/p/w500/" + info.PosterPath;
                 _movies.Add(info);
             }
-            BookmarksMovies = _movies;
-            Debug.WriteLine("Саня хуй соси");
-
-
+            BookmarksMovies = _movies;   
         }
         
         

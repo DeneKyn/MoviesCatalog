@@ -29,7 +29,8 @@ namespace MoviesCatalog.Views
         {
             if (EntrySearch.Text != null)
             {
-                string path = @"https://api.themoviedb.org/3/search/movie?api_key=575d4217958f8abcc637ec5ba82e347c&language=ru-RU&query=" + EntrySearch.Text + "&page=1&include_adult=false";
+                
+                string path = $"{AppSettings.ApiUrl}search/movie?api_key={AppSettings.ApiKey}&language={AppSettings.Language}&query={EntrySearch.Text}&page=1&include_adult=false";
                 string str;
                 using (StreamReader strr = new StreamReader(WebRequest.Create(path).GetResponse().GetResponseStream()))
                     str = strr.ReadToEnd();

@@ -17,14 +17,15 @@ namespace MoviesCatalog.Services
 
         public MockDataStore()
         {
-            movies = new ObservableCollection<Movie>();
+           
+                movies = new ObservableCollection<Movie>();
             genres = new ObservableCollection<Genre>();
             string str;
-            using (StreamReader strr = new StreamReader(WebRequest.Create(@"https://api.themoviedb.org/3/movie/popular?api_key=575d4217958f8abcc637ec5ba82e347c&language=ru-RU&page=1").GetResponse().GetResponseStream()))
+            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}movie/popular?api_key={AppSettings.ApiKey}&language={AppSettings.Language}&page=1").GetResponse().GetResponseStream()))
                 str = strr.ReadToEnd();
             var info = JsonConvert.DeserializeObject<Movies>(str);
 
-            using (StreamReader strr = new StreamReader(WebRequest.Create(@"https://api.themoviedb.org/3/genre/list?api_key=1f54bd990f1cdfb230adb312546d765d&language=ru").GetResponse().GetResponseStream()))
+            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}genre/list?api_key={AppSettings.ApiKey}&language={AppSettings.Language}").GetResponse().GetResponseStream()))
                 str = strr.ReadToEnd();
             var varGenre = JsonConvert.DeserializeObject<GenreCollection>(str);
 

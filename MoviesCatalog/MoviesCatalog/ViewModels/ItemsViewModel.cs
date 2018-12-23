@@ -21,7 +21,7 @@ namespace MoviesCatalog.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = Resource.TopRatedFilm;
             Movies = new CustomCollection<Movie>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

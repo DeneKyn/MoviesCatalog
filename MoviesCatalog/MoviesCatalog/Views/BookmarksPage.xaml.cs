@@ -47,10 +47,8 @@ namespace MoviesCatalog.Views
             StackLayout listViewItem = (StackLayout)button.Parent;
             Label label = (Label)listViewItem.Children[0];
             string text = label.Text;
-
             DeleteId(Convert.ToInt32(text));
-            OnAppearing();
-            DisplayAlert("Уведомление", text, "Ok");
+            OnAppearing();            
         }
     }
 }

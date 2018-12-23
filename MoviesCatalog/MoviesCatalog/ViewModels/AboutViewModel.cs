@@ -9,7 +9,7 @@ namespace MoviesCatalog.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = Resource.Abot;
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }

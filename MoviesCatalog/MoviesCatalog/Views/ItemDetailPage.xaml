@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoviesCatalog.Views.ItemDetailPage"
+             xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog"
              Title="{Binding Title}">
     <ContentPage.Content>
         <ScrollView HorizontalOptions="Center">
@@ -11,10 +12,10 @@
                 <StackLayout Spacing="20" Padding="15">
                     <Image Source="{Binding Movie.PosterPath}"/>
                     <Label Text="{Binding Movie.Name}"/>
-                    <Button Text="Добавить в закладки" Clicked="AddBookmarks"/>
+                    <Button Text="{local:Translate AddToBookmarks}" Clicked="AddBookmarks"/>
                     <Label Text="{Binding Movie.ReleaseDate, StringFormat='Год: {0}'}" HorizontalOptions="Fill"/>
                     <Label Text="{Binding Movie.IsAdultThemed, StringFormat='18+: {0}'}" HorizontalOptions="Fill"/>
-                    <Label Text="Описание" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="{local:Translate Overview}" HorizontalOptions="CenterAndExpand"/>
                     <Label Text="{Binding Movie.Overview}" HorizontalOptions="Fill"/>
                 </StackLayout>
 

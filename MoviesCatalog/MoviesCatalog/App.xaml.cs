@@ -12,8 +12,9 @@ namespace MoviesCatalog
         public App()
         {
             InitializeComponent();
-
-
+            
+            //Resource.Culture = new System.Globalization.CultureInfo("AppSe");
+            Resource.Culture = new System.Globalization.CultureInfo(AppSettings.Language);
             MainPage = new MainPage();
         }
 

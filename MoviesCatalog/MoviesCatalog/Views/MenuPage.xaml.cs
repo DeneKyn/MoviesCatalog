@@ -16,12 +16,13 @@ namespace MoviesCatalog.Views
         {
             InitializeComponent();
 
+            //Resource.Culture = new System.Globalization.CultureInfo("be");
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Популярные фильмы" },
-                new HomeMenuItem {Id = MenuItemType.Favorite, Title="Закладки" },
-                new HomeMenuItem {Id = MenuItemType.Settings, Title="Настройки" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="О приложении" }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title=Resource.TopRatedFilm },
+                new HomeMenuItem {Id = MenuItemType.Favorite, Title=Resource.Bookmarks },
+                new HomeMenuItem {Id = MenuItemType.Settings, Title=Resource.Setting },
+                new HomeMenuItem {Id = MenuItemType.About, Title=Resource.Abot }
             };
 
             ListViewMenu.ItemsSource = menuItems;
