@@ -3,14 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoviesCatalog.Views.SearchPage"
              xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog"
-             Title="{local:Translate Find}">
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:vm="clr-namespace:MoviesCatalog.ViewModels"
+             Title="{Binding Title}">
 
+    <ContentPage.BindingContext>
+        <vm:SearchViewModel/>
+    </ContentPage.BindingContext>
+    
     <StackLayout BackgroundColor="AntiqueWhite">
         <StackLayout Padding="10,5,10,5">
             
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="AntiqueWhite">
                 <Entry x:Name="EntrySearch" Placeholder="{local:Translate FilmFind}" PlaceholderColor="Black" TextColor="Black" FontSize="Medium" />
-                <Button x:Name="animationSearch"  HeightRequest="50" WidthRequest="50" Clicked="SearchFilms"/>
+                
+                <forms:AnimationView
+                            x:Name="animationSearch" 
+                            Animation="search.json" 
+                            AutoPlay="True"
+                            Loop="True"
+                            OnClick="SearchFilms"
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            Speed="1.2">
+                </forms:AnimationView>
             </StackLayout >
         </StackLayout>
         <ListView x:Name="MyListView"
@@ -25,7 +41,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="White">
+                        <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="AntiqueWhite">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100"/>
@@ -34,7 +50,7 @@
                                 <Image Source="{Binding PosterPath}" HeightRequest="150" WidthRequest="130"/>
                                 <StackLayout Grid.Column="1" Margin="5" Orientation="Vertical">
                                     <Label Text="{Binding Name}" AutomationId="LabelTitle" LineBreakMode="NoWrap" FontSize="16" FontAttributes="Bold"/>
-                                    <Label Text="{Binding ReleaseDate, StringFormat='{0:D}'}" LineBreakMode="NoWrap" FontSize="13"/>                                    
+                                    <Label Text="{Binding ReleaseDate}" LineBreakMode="NoWrap" FontSize="13"/>                                    
                                 </StackLayout>
                             </Grid>
                         </Frame>

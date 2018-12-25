@@ -3,23 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MoviesCatalog.Views.BookmarksPage"
              Title="{Binding Title}"
-             xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog">
+             xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{local:Translate RemoveAll}" Clicked="DelereAll"/>
+        <ToolbarItem x:Name="ToolDelete"  Text="{local:Translate RemoveAll}" Clicked="DelereAll"/>
         
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="WhiteSmoke">
+        <StackLayout BackgroundColor="AntiqueWhite">
             <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding BookmarksMovies}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"                
-                CachingStrategy="RecycleElement">
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="White">
+                            <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="AntiqueWhite">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100"/>
@@ -28,16 +30,25 @@
                                     <Image Source="{Binding PosterPath}" HeightRequest="150" WidthRequest="130"/>
                                     <StackLayout Grid.Column="1" Margin="5" Orientation="Vertical">
                                         <Label Text="{Binding Name}" AutomationId="LabelTitle" LineBreakMode="NoWrap" FontSize="16" FontAttributes="Bold"/>
-                                        <Label Text="{Binding ReleaseDate, StringFormat='{0:D}'}" LineBreakMode="NoWrap" FontSize="13"/>
+                                        <Label Text="{Binding ReleaseDate}" LineBreakMode="NoWrap" FontSize="13"/>
 
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding Id}" IsVisible="False"/>
                                             <Label Text="{Binding VoteAverage}" LineBreakMode="NoWrap" FontSize="13"/>
                                             <Image Source="ic_grade_black.png" HeightRequest="15"/>
-                                            <Button Text="{local:Translate Delete}" Clicked="DeleteBookmark"/>
+                                        </StackLayout>
+                                        
+                                        <StackLayout>
+                                            <Label Text="{Binding Id}" IsVisible="False"/>
+                                            <Image Source="cancel.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="End">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="DeleteBookmark"
+                                                        NumberOfTapsRequired="1" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
 
                                         </StackLayout>
-                                    </StackLayout>
+                                        </StackLayout>
                                 </Grid>
                             </Frame>
                         </ViewCell>

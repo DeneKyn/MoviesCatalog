@@ -129,6 +129,9 @@
   <data name="Bookmarks" xml:space="preserve">
     <value>Signets</value>
   </data>
+  <data name="Budget" xml:space="preserve">
+    <value>Budget :</value>
+  </data>
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Changer la langue de l'application</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Effacer</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Durée:</value>
   </data>
   <data name="FilmFind" xml:space="preserve">
     <value>Recherche de film</value>
@@ -150,6 +156,9 @@
   <data name="Notification" xml:space="preserve">
     <value>Notification</value>
   </data>
+  <data name="OriginalLanguage" xml:space="preserve">
+    <value>Langue originale:</value>
+  </data>
   <data name="Overview" xml:space="preserve">
     <value>Vue d'ensemble</value>
   </data>
@@ -162,8 +171,14 @@
   <data name="RemoveAll" xml:space="preserve">
     <value>Enlever tout</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
   <data name="Setting" xml:space="preserve">
     <value>Réglage</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Statut:</value>
   </data>
   <data name="TopRatedFilm" xml:space="preserve">
     <value>Films populaires</value>

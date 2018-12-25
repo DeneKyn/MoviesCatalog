@@ -4,7 +4,7 @@
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="MoviesCatalog.Views.FavoritePage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="WhiteSmoke">
+        <StackLayout BackgroundColor="AntiqueWhite">
             <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding movies}"
                 VerticalOptions="FillAndExpand"

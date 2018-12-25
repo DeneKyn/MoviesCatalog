@@ -49,10 +49,9 @@ namespace MoviesCatalog.Views
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-
-            if (viewModel.Movies.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            base.OnAppearing();            
+            viewModel.LoadItemsCommand.Execute(null);
+            Title = Resource.TopRatedFilm;
         }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
@@ -63,5 +62,7 @@ namespace MoviesCatalog.Views
             //ItemsListView.ItemsSource = null;
             //ItemsListView.ItemsSource = viewModel.groupedMovies;
         }
+
+        
     }
 }

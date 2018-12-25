@@ -11,8 +11,13 @@ namespace MoviesCatalog.Views
     {
         public AboutPage()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Title = Resource.Abot;
         }
     }
 }

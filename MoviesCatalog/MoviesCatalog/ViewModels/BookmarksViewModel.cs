@@ -17,12 +17,12 @@ namespace MoviesCatalog.ViewModels
     {
         public ObservableCollection<Movie> BookmarksMovies { get; set; }
         public BookmarksViewModel()
-        {
-            Title = Resource.Bookmarks;
+        {            
             LoadBookmarks();            
         }
         public void LoadBookmarks()
         {
+            Title = Resource.Bookmarks;
             ObservableCollection<Movie> _movies = new ObservableCollection<Movie>();
             string str;
             List<string> MoviesIds = GetIds();

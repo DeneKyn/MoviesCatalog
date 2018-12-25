@@ -21,16 +21,15 @@ namespace MoviesCatalog.Views
         
         public SearchPage()
         {
-            InitializeComponent();
-            Title = "Поиск";
+            InitializeComponent();            
         }
 
         private void SearchFilms(object sender, EventArgs e)
         {
             if (EntrySearch.Text != null)
             {
-                
-                string path = $"{AppSettings.ApiUrl}search/movie?api_key={AppSettings.ApiKey}&language={AppSettings.Language}&query={EntrySearch.Text}&page=1&include_adult=false";
+
+                string path = @"https://api.themoviedb.org/3/search/movie?api_key=47b5608100749920caa4759c4b75d3b8&language=ru-RU&query=" + EntrySearch.Text + "&page=1&include_adult=false";
                 string str;
                 using (StreamReader strr = new StreamReader(WebRequest.Create(path).GetResponse().GetResponseStream()))
                     str = strr.ReadToEnd();
@@ -42,6 +41,7 @@ namespace MoviesCatalog.Views
                 }
 
                 MyListView.ItemsSource = info.Results;
+                
             }
             else
             {
@@ -61,6 +61,7 @@ namespace MoviesCatalog.Views
             // Manually deselect item.
             MyListView.SelectedItem = null;
         }
+        
 
     }
 }

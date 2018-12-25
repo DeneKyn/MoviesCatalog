@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoviesCatalog.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,8 +33,23 @@ namespace MoviesCatalog.Views
         }
         private void language_picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AppSettings.Language = language_picker.Items[language_picker.SelectedIndex];
+
+            switch (language_picker.SelectedIndex)
+            {
+                case 0:
+                    AppSettings.Language = "ru";
+                    break;
+                case 1:
+                    AppSettings.Language = "en";
+                    break;
+                case 2:
+                    AppSettings.Language = "fr";
+                    break;
+            }           
             WriteSettings();
+            Resource.Culture = new System.Globalization.CultureInfo(AppSettings.Language);              
         }
+        
     }
+    
 }

@@ -19,10 +19,10 @@ namespace MoviesCatalog.Views
             //Resource.Culture = new System.Globalization.CultureInfo("be");
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title=Resource.TopRatedFilm },
-                new HomeMenuItem {Id = MenuItemType.Favorite, Title=Resource.Bookmarks },
-                new HomeMenuItem {Id = MenuItemType.Settings, Title=Resource.Setting },
-                new HomeMenuItem {Id = MenuItemType.About, Title=Resource.Abot }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title=Resource.TopRatedFilm, Icon="video.png" },
+                new HomeMenuItem {Id = MenuItemType.Favorite, Title=Resource.Bookmarks, Icon="bookmark.png" },
+                new HomeMenuItem {Id = MenuItemType.Settings, Title=Resource.Setting, Icon="setting.png" },
+                new HomeMenuItem {Id = MenuItemType.About, Title=Resource.Abot, Icon="question.png" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -36,6 +36,12 @@ namespace MoviesCatalog.Views
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
                 await RootPage.NavigateFromMenu(id);
             };
+        }
+        
+        
+        public void kek()
+        {
+            DisplayAlert("Warning", "MenuPage", "Ok");
         }
     }
 }

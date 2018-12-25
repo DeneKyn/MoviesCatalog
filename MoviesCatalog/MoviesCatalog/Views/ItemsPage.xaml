@@ -6,11 +6,11 @@
               Title="{Binding Title}"
              x:Name="BrowseItemsPage"
              xmlns:local="clr-namespace:MoviesCatalog;assembly=MoviesCatalog">
-    <ContentPage.ToolbarItems>        
-        <ToolbarItem Text="Search" Clicked="Search_Clicked"/>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="search.png" Clicked="Search_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout BackgroundColor="WhiteSmoke">
+        <StackLayout BackgroundColor="AntiqueWhite">
             <SearchBar x:Name="MainSearchBar" Placeholder="Search for Movies"/>
             <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Movies}"
@@ -20,11 +20,12 @@
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
+                ItemSelected="OnItemSelected"
+                BackgroundColor="AntiqueWhite">
             <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="White">
+                            <Frame Margin="0,3" HeightRequest="150" HasShadow="True" BackgroundColor="AntiqueWhite">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100"/>
@@ -33,7 +34,7 @@
                                     <Image Source="{Binding PosterPath}" HeightRequest="150" WidthRequest="130"/>
                                     <StackLayout Grid.Column="1" Margin="5" Orientation="Vertical">
                                         <Label Text="{Binding Name}" AutomationId="LabelTitle" LineBreakMode="NoWrap" FontSize="16" FontAttributes="Bold"/>
-                                        <Label Text="{Binding ReleaseDate, StringFormat='{0:D}'}" LineBreakMode="NoWrap" FontSize="13"/>
+                                        <Label Text="{Binding ReleaseDate}" LineBreakMode="NoWrap" FontSize="13"/>
                                         <Label Text="{Binding GenresNames}" LineBreakMode="WordWrap" FontSize="13"/>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="{Binding VoteAverage}" LineBreakMode="NoWrap" FontSize="13"/>

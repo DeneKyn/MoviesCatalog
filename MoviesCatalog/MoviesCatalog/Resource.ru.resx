@@ -129,6 +129,9 @@
   <data name="Bookmarks" xml:space="preserve">
     <value>Закладки</value>
   </data>
+  <data name="Budget" xml:space="preserve">
+    <value>Бюджет:</value>
+  </data>
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Смена языка приложения</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Продолжительность</value>
   </data>
   <data name="FilmFind" xml:space="preserve">
     <value>Поиск фильмов</value>
@@ -150,6 +156,9 @@
   <data name="Notification" xml:space="preserve">
     <value>Уведомление</value>
   </data>
+  <data name="OriginalLanguage" xml:space="preserve">
+    <value>Оригинальный язык</value>
+  </data>
   <data name="Overview" xml:space="preserve">
     <value>Описание</value>
   </data>
@@ -162,8 +171,14 @@
   <data name="RemoveAll" xml:space="preserve">
     <value>Удалить все</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
   <data name="Setting" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Статус:</value>
   </data>
   <data name="TopRatedFilm" xml:space="preserve">
     <value>Самые популярные</value>

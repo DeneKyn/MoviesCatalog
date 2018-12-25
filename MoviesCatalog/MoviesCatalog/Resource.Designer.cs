@@ -97,6 +97,15 @@ namespace MoviesCatalog {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Budget:.
+        /// </summary>
+        internal static string Budget {
+            get {
+                return ResourceManager.GetString("Budget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Change application language.
         /// </summary>
         internal static string ChangeLanguage {
@@ -120,6 +129,15 @@ namespace MoviesCatalog {
         internal static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Duration:.
+        /// </summary>
+        internal static string Duration {
+            get {
+                return ResourceManager.GetString("Duration", resourceCulture);
             }
         }
         
@@ -160,6 +178,15 @@ namespace MoviesCatalog {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Original language:.
+        /// </summary>
+        internal static string OriginalLanguage {
+            get {
+                return ResourceManager.GetString("OriginalLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Overview.
         /// </summary>
         internal static string Overview {
@@ -196,11 +223,29 @@ namespace MoviesCatalog {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Search.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Setting.
         /// </summary>
         internal static string Setting {
             get {
                 return ResourceManager.GetString("Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Status:.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         

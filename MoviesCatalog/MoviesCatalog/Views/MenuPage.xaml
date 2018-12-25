@@ -5,13 +5,16 @@
              Title="Menu">
     <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="WhiteSmoke">
         <ListView x:Name="ListViewMenu"
-                    HasUnevenRows="True">
+                    HasUnevenRows="True"
+                  BackgroundColor="AntiqueWhite">
+                    
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10">
-                            <Label Text="{Binding Title}" FontSize="20"/>
-                        </Grid>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal" Padding="10" >
+                            <Image Source="{Binding Icon}" HeightRequest="20" WidthRequest="20"/>
+                            <Label Text="{Binding Title}"  FontSize="20"/>
+                        </StackLayout>                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

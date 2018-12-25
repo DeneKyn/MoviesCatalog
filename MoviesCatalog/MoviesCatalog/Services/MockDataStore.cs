@@ -34,6 +34,7 @@ namespace MoviesCatalog.Services
             foreach (var x in info.Results)
             {
                 x.PosterPath = "https://image.tmdb.org/t/p/w500" + x.PosterPath;
+                x.BackdropPath = "https://image.tmdb.org/t/p/w500" + x.BackdropPath;
                 x.GenresNames = "";
                 foreach (var movieGenre in x.Genres)
                     foreach(var genre in genres)

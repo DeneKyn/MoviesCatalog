@@ -35,17 +35,11 @@ namespace MoviesCatalog.Models
         public bool IsAdultThemed { get; set; }
 
         [DataMember(Name = "backdrop_path")]
-        public string BackdropPath { get; set; }
-
-        [DataMember(Name = "budget")]
-        public int Budget { get; set; }
+        public string BackdropPath { get; set; }        
 
         [DataMember(Name = "genre_ids")]
         public int[] Genres { get; set; }
-
-
-        [DataMember(Name = "imdb_id")]
-        public string ImdbId { get; set; }
+     
 
         [DataMember(Name = "original_language")]
         public string OriginalLanguage { get; set; }
@@ -57,27 +51,14 @@ namespace MoviesCatalog.Models
         public string Overview { get; set; }
 
         [DataMember(Name = "popularity")]
-        public double Popularity { get; set; }
+        public float Popularity { get; set; }
 
         [DataMember(Name = "poster_path")]
         public string PosterPath { get; set; }
 
         [DataMember(Name = "release_date")]
-        public DateTime ReleaseDate { get; set; }
-
-        [DataMember(Name = "revenue")]
-        public decimal Revenue { get; set; }
-
-        [DataMember(Name = "runtime")]
-        public int Runtime { get; set; }
-
-
-        [DataMember(Name = "status")]
-        public string Status { get; set; }
-
-        [DataMember(Name = "tagline")]
-        public string Tagline { get; set; }
-
+        public string ReleaseDate { get; set; }        
+        
         [DataMember(Name = "video")]
         public bool IsVideo { get; set; }
 

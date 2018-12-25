@@ -16,7 +16,7 @@
 
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="{local:Translate DateOfBirthday}" FontSize="Medium" />
-                            <Label Text="{Binding Actor.Birthday, StringFormat='{0:D}'}" FontSize="Medium"/>
+                            <Label Text="{Binding Actor.Birthday}" FontSize="Medium"/>
                             <Label x:Name="ID" Text="{Binding id}"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">

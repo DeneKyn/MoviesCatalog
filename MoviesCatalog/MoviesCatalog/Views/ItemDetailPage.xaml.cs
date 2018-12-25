@@ -9,7 +9,7 @@ using System.IO;
 using System.Net;
 using Newtonsoft.Json;
 using static MoviesCatalog.Services.WorkWithFiles;
-
+using static MoviesCatalog.Models.DeteilFilms;
 
 namespace MoviesCatalog.Views
 {
@@ -24,8 +24,7 @@ namespace MoviesCatalog.Views
 
             BindingContext = this.viewModel = viewModel;            
 
-            string str;
-            
+            string str;            
             using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}movie/{viewModel.Movie.Id}/credits?api_key={AppSettings.ApiKey}&language={AppSettings.Language}").GetResponse().GetResponseStream()))
                 str = strr.ReadToEnd();
             var info = JsonConvert.DeserializeObject<MovieCastMember>(str);
@@ -33,8 +32,9 @@ namespace MoviesCatalog.Views
             foreach (var x in info.Casts)
             {
                 x.ProfilePath = "https://image.tmdb.org/t/p/w200" + x.ProfilePath;
+                
             }
-                ActorsListView.ItemsSource = info.Casts;
+                ActorsListView.ItemsSource = info.Casts;            
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -64,8 +64,27 @@ namespace MoviesCatalog.Views
 
         public void AddBookmarks()
         {
+            AnimationView.Play();
             WriteId(viewModel.Movie.Id);
-            DisplayAlert(Resource.Notification, Resource.FilmToBookmarks, "Ok");
+            //DisplayAlert(Resource.Notification, Resource.FilmToBookmarks, "Ok");
+        }
+
+        private void PlayVideo(object sender, EventArgs e)
+        {
+            animationPlay.Play();
+            string str;            
+            using (StreamReader strr = new StreamReader(WebRequest.Create($"{AppSettings.ApiUrl}movie/{viewModel.Movie.Id}/videos?api_key={AppSettings.ApiKey}&language={AppSettings.Language}").GetResponse().GetResponseStream()))
+                str = strr.ReadToEnd();
+            var info = JsonConvert.DeserializeObject<Video>(str);
+
+            if (info.results[0].key != null)
+            {
+                Device.OpenUri(new Uri("https://www.youtube.com/watch?v=" + info.results[0].key));
+            }
+            else
+            {
+                DisplayAlert("Warning", "Трейлера нет на YouTube!", "Ok");
+            }
         }
     }
 }
