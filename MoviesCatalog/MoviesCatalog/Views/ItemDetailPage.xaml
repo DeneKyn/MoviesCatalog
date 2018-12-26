@@ -11,7 +11,9 @@
 
                 
                 <StackLayout Spacing="20" Padding="15">
-                    <Image Source="{Binding Movie.PosterPath}"/>
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image x:Name="ActorPoster" Source="{Binding DetailMovie.backdrop_path}" VerticalOptions="Center" />
+                    </ContentView>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <forms:AnimationView
                             x:Name="AnimationView"
@@ -30,6 +32,15 @@
                                 HeightRequest="70"
                                 WidthRequest="70"
                                 OnClick="PlayVideo"
+                                Speed="1.5"/>
+                        <forms:AnimationView
+                                x:Name="kek" 
+                                Animation="share_it_icon.json" 
+                                AutoPlay="True"
+                                Loop="True"
+                                HeightRequest="50"
+                                WidthRequest="50"
+                                OnClick="ShareBlog"
                                 Speed="1.5"/>
                     </StackLayout>
                     

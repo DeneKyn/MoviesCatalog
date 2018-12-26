@@ -10,6 +10,8 @@ using System.Net;
 using Newtonsoft.Json;
 using static MoviesCatalog.Services.WorkWithFiles;
 using static MoviesCatalog.Models.DeteilFilms;
+using System.Threading.Tasks;
+using Plugin.Share;
 
 namespace MoviesCatalog.Views
 {
@@ -31,11 +33,25 @@ namespace MoviesCatalog.Views
 
             foreach (var x in info.Casts)
             {
-                x.ProfilePath = "https://image.tmdb.org/t/p/w200" + x.ProfilePath;
+                x.ProfilePath = "https://image.tmdb.org/t/p/w200" + x.ProfilePath;                
                 
             }
-                ActorsListView.ItemsSource = info.Casts;            
+
+            ActorsListView.ItemsSource = info.Casts;
+            ActorPoster.Opacity = 0;            
+            ActorPoster.FadeTo(1, 2000);
+            ActorPoster.RelScaleTo(1.3, 2000);            
         }
+
+        public void ShareBlog()
+        {
+
+            string message;          
+            message = $"{Resource.Share1} - {viewModel.DetailMovie.title} \n {Resource.Share2} {viewModel.DetailMovie.release_date} {Resource.Share3} - {viewModel.DetailMovie.vote_average} {Resource.Share4}\n {viewModel.DetailMovie.poster_path}";
+            CrossShare.Current.Share(message);
+               
+        }
+
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
