@@ -18,7 +18,8 @@ namespace MoviesCatalog.ViewModels
                 str = strr.ReadToEnd();
             var temp = JsonConvert.DeserializeObject<Root>(str);
 
-            temp.poster_path = "https://image.tmdb.org/t/p/w500/" + temp.poster_path;
+            temp.poster_path = "https://image.tmdb.org/t/p/w185/" + temp.poster_path;
+            temp.backdrop_path = "https://image.tmdb.org/t/p/w500/" + temp.backdrop_path;
 
             Title = movie?.Name;
             Movie = movie;

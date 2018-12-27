@@ -72,6 +72,9 @@
     <AndroidAsset Include="Assets\search.json" />
     <AndroidAsset Include="Assets\PlayButton.json" />
     <AndroidAsset Include="Assets\youtube.json" />
+    <AndroidAsset Include="Assets\xamarin_animation.json" />
+    <AndroidAsset Include="Assets\xamarin_logo_2.json" />
+    <AndroidAsset Include="Assets\share_it_icon.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

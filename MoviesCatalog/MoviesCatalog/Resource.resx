@@ -120,6 +120,9 @@
   <data name="Abot" xml:space="preserve">
     <value>About the application</value>
   </data>
+  <data name="AboutLabel" xml:space="preserve">
+    <value>A simple application developed on the Xamarin platform for viewing a movie catalog.</value>
+  </data>
   <data name="AddToBookmarks" xml:space="preserve">
     <value>Add to favorite</value>
   </data>
@@ -176,6 +179,18 @@
   </data>
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
+  </data>
+  <data name="Share1" xml:space="preserve">
+    <value>Hi, let's go to the movie</value>
+  </data>
+  <data name="Share2" xml:space="preserve">
+    <value>This movie was released</value>
+  </data>
+  <data name="Share3" xml:space="preserve">
+    <value>and has a rating</value>
+  </data>
+  <data name="Share4" xml:space="preserve">
+    <value>stars</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Status:</value>

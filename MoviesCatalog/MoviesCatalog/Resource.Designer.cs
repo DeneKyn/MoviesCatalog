@@ -70,6 +70,15 @@ namespace MoviesCatalog {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на A simple application developed on the Xamarin platform for viewing a movie catalog..
+        /// </summary>
+        internal static string AboutLabel {
+            get {
+                return ResourceManager.GetString("AboutLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Add to favorite.
         /// </summary>
         internal static string AddToBookmarks {
@@ -237,6 +246,42 @@ namespace MoviesCatalog {
         internal static string Setting {
             get {
                 return ResourceManager.GetString("Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Hi, let&apos;s go to the movie.
+        /// </summary>
+        internal static string Share1 {
+            get {
+                return ResourceManager.GetString("Share1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на This movie was released.
+        /// </summary>
+        internal static string Share2 {
+            get {
+                return ResourceManager.GetString("Share2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на and has a rating.
+        /// </summary>
+        internal static string Share3 {
+            get {
+                return ResourceManager.GetString("Share3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на stars.
+        /// </summary>
+        internal static string Share4 {
+            get {
+                return ResourceManager.GetString("Share4", resourceCulture);
             }
         }
         

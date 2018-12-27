@@ -120,6 +120,9 @@
   <data name="Abot" xml:space="preserve">
     <value>О приложении</value>
   </data>
+  <data name="AboutLabel" xml:space="preserve">
+    <value>Простое приложение, разработанное на платформе Xamarin, для просмотра каталога фильмов</value>
+  </data>
   <data name="AddToBookmarks" xml:space="preserve">
     <value>Добавить в закладки</value>
   </data>
@@ -176,6 +179,18 @@
   </data>
   <data name="Setting" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="Share1" xml:space="preserve">
+    <value>Привет, давай сходим на фильм</value>
+  </data>
+  <data name="Share2" xml:space="preserve">
+    <value>Этот фильм вышел в прокат</value>
+  </data>
+  <data name="Share3" xml:space="preserve">
+    <value>и имеет рейтинг</value>
+  </data>
+  <data name="Share4" xml:space="preserve">
+    <value>звёзд</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>Статус:</value>
