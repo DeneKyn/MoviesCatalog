@@ -47,9 +47,14 @@ namespace MoviesCatalog.Views
                     break;
             }           
             WriteSettings();
-            Resource.Culture = new System.Globalization.CultureInfo(AppSettings.Language);              
+            Resource.Culture = new System.Globalization.CultureInfo(AppSettings.Language);
+            //App.Refresh();
         }
-        
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            App.Refresh();
+        }
     }
     
 }

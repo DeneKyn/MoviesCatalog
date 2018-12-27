@@ -12,19 +12,34 @@
     
     <ContentPage.Content>
         
-        <TableView BackgroundColor="AntiqueWhite">
+        <!--<TableView BackgroundColor="AntiqueWhite">
                 <TableSection Title="{local:Translate ChangeLanguage}" x:Name="TableTitle">
                 <ViewCell>
-                    <Picker SelectedIndexChanged="language_picker_SelectedIndexChanged" x:Name="language_picker">
+                    <StackLayout Orientation="Vertical">
+                        <Button Clicked="Button_Clicked" Text="SAVE"/>
+                        <Picker SelectedIndexChanged="language_picker_SelectedIndexChanged" x:Name="language_picker">
                             <Picker.Items>
-                            <x:String>Русский</x:String>
-                            <x:String>English</x:String>
-                            <x:String>France</x:String>
-                        </Picker.Items>
-                    </Picker>
+                                <x:String>Русский</x:String>
+                                <x:String>English</x:String>
+                                <x:String>France</x:String>
+                            </Picker.Items>
+                        </Picker>
+
+                    </StackLayout>
                 </ViewCell>
             </TableSection>
-        </TableView>
+        </TableView>-->
+
+        <StackLayout Orientation="Vertical">
+            <Picker SelectedIndexChanged="language_picker_SelectedIndexChanged" x:Name="language_picker">
+                <Picker.Items>
+                    <x:String>Русский</x:String>
+                    <x:String>English</x:String>
+                    <x:String>France</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Clicked="Button_Clicked" Text="SAVE"/>
+        </StackLayout>
         
     </ContentPage.Content>
 </ContentPage>

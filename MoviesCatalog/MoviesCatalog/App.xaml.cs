@@ -9,7 +9,7 @@ namespace MoviesCatalog
 {
     public partial class App : Application
     {
-
+        public static App Instance;
         public App()
         {
             InitializeComponent();
@@ -21,6 +21,13 @@ namespace MoviesCatalog
             WorkWithFiles.ReadSettings();
             Resource.Culture = new System.Globalization.CultureInfo(AppSettings.Language);
             MainPage = new MainPage();
+
+            Instance = this;
+        }
+
+        public static void Refresh()
+        {
+            Instance.MainPage = new MainPage();
         }
 
         protected override void OnStart()
